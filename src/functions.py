@@ -1,9 +1,7 @@
 import json
 
-
 def filter_operations(file_name):
     """Фильтрует только операции со статусом EXECUTED(выполненные)"""
-
     with open(file_name, encoding='utf-8') as f:
         data = json.load(f)
 
@@ -18,7 +16,7 @@ def filter_operations(file_name):
 
 def sorts_filtered_operations(ops):
     """Сортирует отфильтрованные операции по дате в порядке убывания(от новых к старым)"""
-    return sorted(ops, key=lambda x: x['date'], reverse=True)
+    return sorted(ops, key=lambda op: op['date'], reverse=True)
 
 
 def receives_five_operations(sort):
